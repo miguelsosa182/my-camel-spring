@@ -1,0 +1,5 @@
+com\agilethougth\mx\service\ItemServiceImpl.class
+com\agilethougth\mx\dto\Item.class
+com\agilethougth\mx\service\ItemService.class
+com\agilethougth\mx\configuration\Config.class
+com\agilethougth\mx\route\SimpleRouteBuilder.class
