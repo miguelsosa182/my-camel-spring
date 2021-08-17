@@ -14,55 +14,41 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <camel.version>2.16.3</camel.version>
   </properties>
 
   <dependencies>
-    <dependency>
+     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
-      <version>2.24.0</version>
+       <version>${camel.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-spring</artifactId>
-      <version>2.24.0</version>
+      <version>${camel.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-restlet</artifactId>
-      <version>2.24.0</version>
+      <version>${camel.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-servlet</artifactId>
-      <version>2.24.0</version>
+      <version>${camel.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-jms</artifactId>
-      <version>2.16.3</version>
+      <version>${camel.version}</version>
     </dependency>
-    <!--<dependency>
+    <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.0.1</version>
       <scope>provided</scope>
-    </dependency>-->
-
-    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
-    </dependency>
-
-
-    <dependency>
-      <groupId>org.restlet.jee</groupId>
-      <artifactId>org.restlet.ext.spring</artifactId>
-      <version>2.3.12</version>
     </dependency>
     <!-- logging -->
     <dependency>
@@ -85,7 +71,7 @@
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-test-spring</artifactId>
-      <version>2.24.0</version>
+      <version>${camel.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -109,16 +95,9 @@
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-jackson</artifactId>
-      <version>2.25.4</version>
+      <version>${camel.version}</version>
     </dependency>
   </dependencies>
-  <repositories>
-    <repository>
-      <id>maven-restlet</id>
-      <name>Restlet repository</name>
-      <url>https://maven.restlet.com</url>
-    </repository>
-  </repositories>
   <build>
     <defaultGoal>install</defaultGoal>
 
@@ -146,7 +125,7 @@
       <plugin>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-maven-plugin</artifactId>
-        <version>2.16.3</version>
+        <version>${camel.version}</version>
       </plugin>
     </plugins>
   </build>

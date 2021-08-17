@@ -7,68 +7,6 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-  <camelContext xmlns="http://camel.apache.org/schema/spring">
-    <!-- here is a sample which processes the input files
-         (leaving them in place - see the 'noop' flag)
-         then performs content based routing on the message using XPath -->
-    <route>
-      <from uri="file:src/data?noop=true"/>
-      <choice>
-        <when>
-          <xpath>/person/city = 'London'</xpath>
-          <log message="UK message"/>
-          <to uri="file:target/messages/uk"/>
-        </when>
-        <otherwise>
-          <log message="Other message"/>
-          <to uri="file:target/messages/others"/>
-        </otherwise>
-      </choice>
-    </route>
+ <camelContext xmlns="http://camel.apache.org/schema/spring"/>
 
-    <route id="mx.com.bne.get.items">
-      <from uri="restlet:/api/v1/private/get/items?restletMethod=GET" />
-        <to uri="direct:/v1/get/items"/>
-      <setBody>
-        <simple>
-          {
-          "cards":[
-          {
-          "titulo":"Cuenta",
-          "id":"1",
-          "amount": 150000,
-          "descripcion":"Cuenta de nomina"
-          },
-          {
-          "titulo":"Pago",
-          "id":"2",
-          "amount": 150000,
-          "descripcion":"Cuenta de pago"
-          },
-          {
-          "titulo":"Transferencia",
-          "id":"3",
-          "amount": 150000,
-          "descripcion":"Transferencias"
-          },
-          {
-          "titulo":"Autorizacion",
-          "id":"4",
-          "amount": 150000,
-          "descripcion":"Autorizaciones"
-          }
-          ]
-          }
-        </simple>
-      </setBody>
-    </route>
-  </camelContext>
-
- <!-- <bean id="RestletComponent" class="org.restlet.Component" />
-
-  <bean id="RestletComponentService" class="org.apache.camel.component.restlet.RestletComponent">
-    <constructor-arg index="0">
-      <ref bean="RestletComponent" />
-    </constructor-arg>
-  </bean>-->
 </beans>
