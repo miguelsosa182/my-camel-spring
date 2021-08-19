@@ -97,6 +97,13 @@
       <artifactId>camel-jackson</artifactId>
       <version>${camel.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-http-common -->
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-http-common</artifactId>
+      <version>${camel.version}</version>
+    </dependency>
+
   </dependencies>
   <build>
     <defaultGoal>install</defaultGoal>
