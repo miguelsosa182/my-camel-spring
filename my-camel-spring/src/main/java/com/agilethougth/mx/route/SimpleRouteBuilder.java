@@ -20,7 +20,7 @@ public class SimpleRouteBuilder extends RouteBuilder {
 
         /**Con el mismo puerto de Backbase*/
         restConfiguration().component("restlet").enableCORS(true)
-        .corsHeaderProperty("Access-Control-Allow-Origin","http://localhost:4200")
+        .corsHeaderProperty("Access-Control-Allow-Origin","http://ec2-3-81-147-145.compute-1.amazonaws.com:9504")
         .corsHeaderProperty("Access-Control-Allow-Methods", "GET")
         .corsHeaderProperty("Access-Control-Max-Age", "3600")
         .corsHeaderProperty("Access-Control-Allow-Headers", "*")
