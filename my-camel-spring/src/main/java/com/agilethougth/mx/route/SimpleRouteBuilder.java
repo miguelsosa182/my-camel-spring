@@ -19,7 +19,15 @@ public class SimpleRouteBuilder extends RouteBuilder {
         //restConfiguration().component("restlet").port(9090).host("localhost").bindingMode(RestBindingMode.json);
 
         /**Con el mismo puerto de Backbase*/
-        restConfiguration().component("restlet").bindingMode(RestBindingMode.json);
-        rest().get("/api/v1/private/get/items/2").produces(MediaType.APPLICATION_JSON_VALUE).route().setBody().constant(cardService.getRoot());
+        restConfiguration().component("restlet").enableCORS(true)
+        .corsHeaderProperty("Access-Control-Allow-Origin","http://localhost:4200")
+        .corsHeaderProperty("Access-Control-Allow-Methods", "GET")
+        .corsHeaderProperty("Access-Control-Max-Age", "3600")
+        .corsHeaderProperty("Access-Control-Allow-Headers", "*")
+        .bindingMode(RestBindingMode.json);
+        rest().get("/api/v1/private/get/items/online").produces(MediaType.APPLICATION_JSON_VALUE)
+        .route()
+        .setHeader("Access-Control-Allow-Credentials", constant(true))
+        .setBody().constant(cardService.getRoot());
     }
 }
